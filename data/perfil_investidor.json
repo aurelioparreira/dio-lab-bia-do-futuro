@@ -1,23 +1,34 @@
 {
-  "nome": "João Silva",
-  "idade": 32,
-  "profissao": "Analista de Sistemas",
-  "renda_mensal": 5000.00,
-  "perfil_investidor": "moderado",
-  "objetivo_principal": "Construir reserva de emergência",
-  "patrimonio_total": 15000.00,
-  "reserva_emergencia_atual": 10000.00,
-  "aceita_risco": false,
-  "metas": [
+  "cliente": {
+    "nome": "João",
+    "idade": 32,
+    "profissao": "Analista de Sistemas",
+    "renda_mensal": 5000.00,
+    "patrimonio_total": 15000.00
+  },
+  "perfil_financeiro": {
+    "tipo": "moderado",
+    "aceita_risco": false,
+    "momento": "organização financeira"
+  },
+  "objetivos": [
     {
-      "meta": "Completar reserva de emergência",
-      "valor_necessario": 15000.00,
+      "tipo": "seguranca",
+      "descricao": "Completar reserva financeira",
+      "valor": 15000.00,
       "prazo": "2026-06"
     },
     {
-      "meta": "Entrada do apartamento",
-      "valor_necessario": 50000.00,
+      "tipo": "patrimonio",
+      "descricao": "Entrada de imóvel",
+      "valor": 50000.00,
       "prazo": "2027-12"
     }
-  ]
+  ],
+  "indicacoes_consorcio": {
+    "prioridade": "baixa",
+    "momento_ideal": "apos_reserva",
+    "tipo_recomendado": "consorcio_imovel_planejado",
+    "estrategia": "entrada_programada"
+  }
 }
