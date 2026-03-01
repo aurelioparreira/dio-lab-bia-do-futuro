@@ -61,7 +61,7 @@ flowchart TD
 |------------|-----------|
 | Interface | Streamlit |
 | LLM | Ollama |
-| Base de Conhecimento | JSON/CSV com dados mocados na pasta `data` |
+| Base de Conhecimento | JSON/CSV com dados mockados na pasta `data` |
 | Validação | Checagem de alucinações |
 
 ---
