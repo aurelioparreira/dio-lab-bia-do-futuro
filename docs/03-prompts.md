@@ -146,5 +146,5 @@ Para fazer uma recomendação adequada, preciso entender melhor seu objetivo. Vo
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- Logo nos primeiros aprendizados percebemos a necessidade de inclulir uma nova regra orientando para que as respostas sejam mais objetivas e colocando um limite de no máximo dois parágrafos.
+- Logo nos primeiros aprendizados percebemos a necessidade de incluir uma nova regra orientando para que as respostas sejam mais objetivas e colocando um limite de no máximo dois parágrafos.
 
