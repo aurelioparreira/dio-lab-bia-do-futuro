@@ -280,4 +280,4 @@ Este projeto é open-source e pode ser utilizado para fins educacionais.
 
 ## Interface
 
-![Interface](https://github.com/aurelioparreira/dio-lab-bia-do-futuro/assets/interface.pdf)
+![Interface](https://github.com/aurelioparreira/dio-lab-bia-do-futuro/assets/Streamlit.pdf)
