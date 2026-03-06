@@ -1,149 +1,283 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# CORA — AI Financial Advisor
 
-## Contexto
+CORA é um agente de inteligência artificial projetado para atuar como **consultora financeira digital**, capaz de analisar dados de clientes e gerar recomendações personalizadas para tomada de decisão.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+O projeto demonstra como integrar **LLMs, dados estruturados e engenharia de prompts** para criar um **AI Agent aplicado ao setor financeiro**.
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+Este repositório foi desenvolvido no contexto do laboratório **BIA do Futuro da Digital Innovation One (DIO)**.
 
 ---
 
-## O Que Você Deve Entregar
+# Visão Geral
 
-### 1. Documentação do Agente
+A CORA combina **dados financeiros estruturados + inteligência artificial generativa** para produzir recomendações personalizadas.
 
-Defina **o que** seu agente faz e **como** ele funciona:
+Ela analisa:
 
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
+- perfil do investidor
+- histórico de transações
+- objetivos financeiros
+- produtos financeiros disponíveis
 
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+Com base nesse contexto, o agente gera **orientações financeiras inteligentes e contextualizadas**.
 
 ---
 
-### 3. Prompts do Agente
+# Problema
 
-Documente os prompts que definem o comportamento do seu agente:
+A maioria das pessoas:
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+- não tem acesso a consultoria financeira
+- não sabe organizar suas finanças
+- não entende qual produto financeiro escolher
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+Consultores humanos são caros e pouco escaláveis.
 
 ---
 
-### 5. Avaliação e Métricas
+# Solução
 
-Descreva como você avalia a qualidade do seu agente:
+CORA atua como uma **consultora financeira digital baseada em IA**, capaz de:
 
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
+- interpretar dados financeiros do usuário
+- identificar padrões de gastos
+- avaliar metas financeiras
+- sugerir estratégias financeiras
 
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+Tudo isso de forma **automatizada e escalável**.
 
 ---
 
-## Ferramentas Sugeridas
+# Arquitetura da Solução
 
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+Fluxo de funcionamento do agente:
 
 ```
-📁 lab-agente-financeiro/
+
+Dados do Cliente
+↓
+Construção do Contexto
+↓
+Prompt para LLM
+↓
+Processamento da IA
+↓
+Resposta Inteligente
+
+```
+
+A solução foi estruturada em quatro camadas principais.
+
+---
+
+# Camada 1 — Dados Financeiros
+
+Dados simulados utilizados pelo agente para análise.
+
+```
+
+data/
 │
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+├── perfil_investidor.json
+├── produtos_financeiros.json
+├── historico_atendimento.csv
+└── transacoes.csv
+
+```
+
+Esses dados representam o **contexto financeiro do cliente**.
+
+---
+
+# Camada 2 — Context Builder
+
+Os dados são consolidados em um **prompt estruturado** enviado ao modelo de linguagem.
+
+Exemplo de contexto gerado:
+
+```
+
+Cliente: João
+Idade: 35
+Perfil: Moderado
+
+Objetivos:
+
+* Comprar carro em 3 anos
+* Criar reserva de emergência
+
+```
+
+Esse contexto permite que a IA produza respostas **mais precisas e personalizadas**.
+
+---
+
+# Camada 3 — Motor de Inteligência Artificial
+
+O projeto utiliza um **LLM (Large Language Model)** para interpretar o contexto e gerar recomendações financeiras.
+
+Fluxo lógico:
+
+```
+
+Data → Context → Prompt → LLM → Insight Financeiro
+
 ```
 
 ---
 
-## Dicas Finais
+# Camada 4 — Interface
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+A interface foi construída utilizando **Streamlit**, permitindo interação simples com o agente.
+
+Funcionalidades:
+
+- perguntas financeiras
+- recomendações personalizadas
+- interpretação do perfil financeiro
+
+---
+
+# Tecnologias Utilizadas
+
+Python  
+Streamlit  
+Pandas  
+JSON  
+CSV  
+API de LLM  
+Prompt Engineering  
+
+---
+
+# Estrutura do Projeto
+
+```
+
+.
+├── data
+│   ├── perfil_investidor.json
+│   ├── produtos_financeiros.json
+│   ├── historico_atendimento.csv
+│   └── transacoes.csv
+│
+├── docs
+│   ├── documentacao_agente.md
+│   ├── base_conhecimento.md
+│   ├── prompts.md
+│   └── metricas.md
+│
+├── src
+│   └── app.py
+│
+└── README.md
+
+```
+
+---
+
+# Como Executar o Projeto
+
+## 1 — Clonar repositório
+
+```
+
+git clone [https://github.com/aurelioparreira/dio-lab-bia-do-futuro](https://github.com/aurelioparreira/dio-lab-bia-do-futuro)
+
+```
+
+---
+
+## 2 — Instalar dependências
+
+```
+
+pip install -r requirements.txt
+
+```
+
+---
+
+## 3 — Executar aplicação
+
+```
+
+streamlit run src/app.py
+
+```
+
+---
+
+# Exemplo de Uso
+
+Pergunta do usuário:
+
+```
+
+Qual estratégia devo usar para comprar um carro em 3 anos?
+
+```
+
+Resposta da CORA:
+
+- análise de renda
+- análise de gastos
+- sugestão de plano de economia
+- indicação de produtos financeiros
+
+---
+
+# Roadmap
+
+Próximas evoluções planejadas:
+
+- integração com APIs bancárias
+- memória de conversas
+- recomendação automática de investimentos
+- dashboard financeiro
+- análise preditiva de gastos
+
+---
+
+# Aprendizados do Projeto
+
+Durante o desenvolvimento foram explorados:
+
+- AI Agents
+- Engenharia de Prompts
+- Integração de LLMs com dados estruturados
+- Interfaces conversacionais
+- IA aplicada a tomada de decisão financeira
+
+---
+
+# Possíveis Aplicações
+
+- fintechs
+- consultoria financeira automatizada
+- educação financeira
+- assistentes bancários
+- plataformas de investimento
+
+---
+
+# Autor
+
+Aurélio Parreira  
+
+Explorador de IA aplicada à tomada de decisão.
+
+GitHub  
+https://github.com/aurelioparreira
+
+---
+
+# Licença
+
+Este projeto é open-source e pode ser utilizado para fins educacionais.
+
+---
+
+## Interface
+
+![Interface](docs/assets/interface.pdf)
